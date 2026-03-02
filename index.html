@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exspenso - Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- ===== LOGIN PAGE ===== -->
+<div class="container" id="loginPage">
+
+    <div class="login-card">
+        <h1>💰 Exspenso</h1>
+        <p class="subtitle">Smart Expense Tracker</p>
+
+        <form id="loginForm">
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <p class="footer-text">Internship Project UI</p>
+    </div>
+
+</div>
+
+
+<!-- ===== DASHBOARD ===== -->
+<div class="dashboard hidden" id="dashboard">
+
+    <aside class="sidebar">
+        <h2>Exspenso</h2>
+
+        <ul>
+            <li class="active">Dashboard</li>
+            <li>Transactions</li>
+            <li>Analytics</li>
+            <li>Settings</li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+
+        <header>
+            <h2>Dashboard</h2>
+            <button class="logout">Logout</button>
+        </header>
+
+        <!-- Cards -->
+        <section class="cards">
+
+            <div class="card income">
+                <h3>Total Income</h3>
+                <p>₹25,000</p>
+            </div>
+
+            <div class="card expense">
+                <h3>Total Expense</h3>
+                <p>₹12,500</p>
+            </div>
+
+            <div class="card balance">
+                <h3>Balance</h3>
+                <p>₹12,500</p>
+            </div>
+
+        </section>
+
+        <!-- Add Expense -->
+        <section class="add-expense">
+            <h3>Add Expense</h3>
+
+            <input type="text" placeholder="Title">
+            <input type="number" placeholder="Amount">
+
+            <select>
+                <option>Food</option>
+                <option>Travel</option>
+                <option>Shopping</option>
+                <option>Other</option>
+            </select>
+
+            <button>Add Transaction</button>
+        </section>
+
+    </main>
+
+</div>
+
+
+<script>
+    // Simple demo login switch
+    const form = document.getElementById("loginForm");
+    const loginPage = document.getElementById("loginPage");
+    const dashboard = document.getElementById("dashboard");
+
+    form.addEventListener("submit", function(e){
+        e.preventDefault();
+        loginPage.classList.add("hidden");
+        dashboard.classList.remove("hidden");
+    });
+</script>
+
+</body>
+</html>
